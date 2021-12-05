@@ -1,0 +1,123 @@
+{% extends 'base.html' %}
+{% load static %}
+{% block metadescription %}
+    {% if category %}
+        {{ category.description|truncatewords:155 }}
+    {% else %}
+        Welcom to You by You'r needs ....
+
+    {% endif %}
+{% endblock %}
+
+<!-------------------------------------------->
+
+{% block title %}
+    {% if category %}
+        {{ category.name }} --- You
+
+    {% else %}
+        See Our New Collections
+
+    {% endif %}
+{% endblock %}
+
+<!------------------------------------------>
+
+{% block content %}
+
+    {% if category %}
+    <div>
+        <div class="row my_row_class">
+            <div class="mx_auto">
+            <p>
+                <a href="{% url 'emilyapp:allProdCat' %}">Our Products.</a>
+            </p>
+            </div>
+        </div>
+    </div>
+    {% endif %}
+
+    <div class="mx_auto">
+        {% if category %}
+        <img class="my_image" src="{{ category.image.url}}" alt="{{category.name}}">
+    </div>
+<br>
+    <div>
+        <h1 class="text-center my_title">{{category.name}}</h1>
+        <p>{{category.description}}</p>
+    </div>
+
+        {% else %}
+        <div>
+            <img class="my_image my_image_padding" src="{% static 'img/banner.png' %}" alt="our products" height="500px" width="100%">
+        </div>
+        <br>
+        <div>
+            <h1 class="text-center my_title">
+                Our FORMAL'S Collections
+            </h1>
+            <p class="text-justify">
+                Formal wear and formal dress are general terms for clothing suitable for formal social events, such as a wedding, formal garden party or dinner, débutante cotillion, dance, or race. ...
+                A dress code is a set of rules governing a certain combination of clothing; some examples are black tie and morning dress.
+                In western countries, a "formal" or white tie dress code typically means tailcoats for men and full-length evening dresses with opera-length gloves for women.
+                A most formal dress for women are full-length ball or evening gowns with evening gloves.
+                Formal skirts emanate class and confidence and can be easily paired with solid full-sleeved shirts as well as blouses.
+                Skirts make a great formal wear for office and high-functioning corporate events.
+                It's advisable to choose skirts that are knee length or below the knee for a formal look.
+                The tuxedo is the heart of formal dress. For the DRESSIEST of occasions, bow tie is a must – a tailed jacket, white shirt and white bow tie.
+                For slightly less starched occasions, black tie is the order of the day – a tailless jacket, black cummerbund or waistcoat, and a black bow tie.
+            </p>
+        </div>
+        {% endif %}
+
+
+    <div class="container">
+
+        <div class="row mx-auto">
+
+            {% for product in products.object_list %}
+
+            <div class="my_bottom_marging col-9 col-sm-12 col-md-4 xol-md-4">
+
+                <div class="card text-center p-3 shadow" style="min-width: 18erm;">
+
+                    <a href="{{product.get_url}}"><img class="card-img-top my_image" src="{{product.image.url}}" alt="{{product.name}}"></a>
+
+               <div class="card-body">
+
+                   <h4>{{product.name}}</h4>
+
+                   <p>{{product.price}}</p>
+
+               </div>
+
+                </div>
+
+            </div>
+
+            {% endfor %}
+
+        </div>
+
+        <div class="mx-auto">
+            {% if products.paginator.num_pages > 1 %}
+
+            <hr>
+            <div class="text-center">
+
+                {% for pg in products.paginator.page_range %}
+                <a href="?page={{pg}}" class="btn btn-light btn-sm {% if products.number == pg %} active {% endif %}">{{pg}}</a>
+                {% endfor %}
+
+            </div>
+
+            {% endif %}
+
+        </div>
+        <br>
+
+    </div>
+
+
+
+{% endblock %}

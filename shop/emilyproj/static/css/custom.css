@@ -1,0 +1,150 @@
+body {
+    background-color: rgb(255, 230, 255);
+}
+
+.logo {
+    padding-top: 25px;
+    padding-bottom: 10px;
+}
+
+.bar {
+    height: 39px;
+}
+
+.nav-item{
+    letter-spacing: .2em;
+    font-size: 14px;
+    text-transform: uppercase;
+}
+
+.dropdown-item{
+    letter-spacing: .2em;
+    font-size: 14px;
+    text-transform: uppercase;
+}
+
+.dropdown-item{
+  background-color: #F5F5DC;
+  min-width: 160px;
+  box-shadow: 1px 2px 5px 0px rgba(163, 150, 46, 0.254);
+  z-index: 1;
+}
+
+.nav-item:hover{
+    background-color: #DEB887;
+}
+
+.my_footer{
+    background-color:#8FBC8F;
+    height: 14px;
+}
+
+.my_footer p{
+    padding-top: 1px;
+    font-size: 14px;
+    font-weight: lighter;
+}
+.site_footer{
+     background-color:#8FBC8F;
+}
+
+.my_row_class {
+    padding-top: 15px;
+}
+
+
+.my_row_class .mx_auto {
+    color: gray;
+    font-size: 12px;
+}
+
+.my_image {
+    width: 100%;
+    height: auto;
+}
+
+.my_title {
+    font-size: 16px;
+    text-transform: uppercase;
+    letter-spacing: .10em;
+}
+
+.my_image_padding {
+    padding: 5px;
+}
+
+.my_bottom_margin {
+    margin-bottom: 10px;
+    padding-bottom: 10px;
+}
+
+.card-body h4{
+    font-size: 14px;
+    text-transform: uppercase;
+    letter-spacing: .2em;
+}
+
+.row my_prod_row_class {
+    padding-top: 15px;
+    padding-bottom: 20px;
+}
+
+.row my_prod_row_class .mx_auto{
+    color: black;
+    font-size: 12px;
+    text-decoration: none;
+}
+
+my_prod_title {
+    font-size: 16px;
+    text-transform: uppercase;
+    letter-spacing: .2em;
+    padding-top: 15px;
+    padding-bottom: 10px;
+}
+
+.my_prod_text {
+    padding-right: 20px;
+}
+
+.my_btn {
+    padding-top: 80px;
+}
+
+.my_search_text {
+    padding-top: 20px;
+}
+
+.my_custom_table {
+    min-width: 400px;
+    font-size: 14px;
+}
+
+.my_custom_thead {
+    font-weight: normal;
+    text-transform: uppercase;
+    letter-spacing: .2em;
+    background-color: #f8f8fa!important;
+}
+
+.custom_a {
+    text-decoration: none;
+}
+
+.custom_icon {
+    text-decoration: none;
+    color: #868e96!important;
+}
+
+.my_custom_button {
+    margin-top: 5px;
+}
+
+.background {
+    background-attachment: fixed;
+}
+
+.custom_image{
+    width: 250px;
+    height: 200px;
+}
